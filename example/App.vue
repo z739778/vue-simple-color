@@ -12,12 +12,11 @@
 </template>
 
 <script>
-import compact from '../src/Compact.vue'
-
+import vueColor from '../dist/vue-simple-color.min.js'
 let defaultProps = '#FFFFFF'
 export default {
   components: {
-    'compact-picker': compact
+    'compact-picker': vueColor.Compact
   },
   data () {
     return {

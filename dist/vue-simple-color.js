@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["VueSimpleColor"] = factory();
+	else
+		root["VueSimpleColor"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -172,19 +182,7 @@ var VueSimpleColor = {
   version: '0.0.1',
   Compact: __WEBPACK_IMPORTED_MODULE_0__Compact_vue___default.a
 };
-
-var install = function install(Vue) {
-  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-  Vue.component(__WEBPACK_IMPORTED_MODULE_0__Compact_vue___default.a, __WEBPACK_IMPORTED_MODULE_0__Compact_vue___default.a);
-};
-
-// auto install
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Object.assign(VueSimpleColor, { install: install })); // eslint-disable-line no-undef
+/* harmony default export */ __webpack_exports__["default"] = (VueSimpleColor); // eslint-disable-line no-undef
 
 /***/ }),
 /* 3 */
@@ -658,3 +656,4 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ })
 /******/ ]);
+});

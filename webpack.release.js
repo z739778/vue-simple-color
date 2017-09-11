@@ -6,7 +6,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'vue-simple-color.js'
+    filename: 'vue-simple-color.js',
+    library: 'VueSimpleColor',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [
