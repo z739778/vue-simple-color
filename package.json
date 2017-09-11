@@ -1,13 +1,23 @@
 {
   "name": "vue-simple-color",
   "description": "A Vue.js project",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "fanxiaolong <fanxiaolongfe@gmail.com>",
-  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config ./webpack.release.js && cross-env NODE_ENV=production webpack --progress --hide-modules --config ./webpack.release.min.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z739778/vue-simple-color.git"
+  },
+  "keywords": [
+    "vue",
+    "color-piker",
+    "plugin"
+  ],
+  "email":"fanxiaolongfe@gmail.com",
+  "license": "ISC",   
   "dependencies": {
     "vue": "^2.3.3"
   },
