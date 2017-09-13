@@ -1,12 +1,12 @@
 {
   "name": "vue-simple-color",
-  "description": "A Vue.js project",
-  "version": "0.0.3",
-  "main": "dist/vue-simple-color.min.js",  
+  "description": "A Vue.js plugin",
+  "version": "0.0.4",
+  "main": "dist/vue-simple-color.js",  
   "author": "fanxiaolong <fanxiaolongfe@gmail.com>",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config ./webpack.release.js && cross-env NODE_ENV=production webpack --progress --hide-modules --config ./webpack.release.min.js"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config='build/webpack.demos.config.js'",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "file-loader": "^0.9.0",
     "vue-loader": "^12.1.0",
     "vue-template-compiler": "^2.3.3",
-    "webpack": "^2.6.1",
+    "webpack": "^3.0.0",
     "webpack-dev-server": "^2.4.5"
   }
 }

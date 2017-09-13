@@ -3,7 +3,7 @@
     <div class="demo-container">
       <div class="demo-list">
         <div class="demo-item">
-          <compact-picker v-model="colors"></compact-picker>
+          <Compact v-model="colors"></Compact>
           <h6>Compact</h6>
         </div>
       </div>
@@ -12,12 +12,8 @@
 </template>
 
 <script>
-import vueColor from '../dist/vue-simple-color.min.js'
 let defaultProps = '#FFFFFF'
 export default {
-  components: {
-    'compact-picker': vueColor.Compact
-  },
   data () {
     return {
       colors: defaultProps

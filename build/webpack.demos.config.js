@@ -2,13 +2,11 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './example/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'vue-simple-color.js',
-    library: 'VueSimpleColor',
-    libraryTarget: 'umd'
+    path: path.resolve(__dirname, './example'),
+    publicPath: '/example/',
+    filename: 'example.js'
   },
   module: {
     rules: [
@@ -40,7 +38,12 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true
+  },
   performance: {
     hints: false
-  }
+  },
+  devtool: '#eval-source-map'
 }

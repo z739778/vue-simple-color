@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Compact from '../dist/vue-simple-color.js'
+Vue.use(Compact)
 /* eslint-disable */
-console.log(Vue.version)
-new Vue({
+const app = new Vue({
   el: '#app-wrap',
   render: h => h(App)
 })

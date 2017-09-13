@@ -1,12 +1,18 @@
 var path = require('path')
 var webpack = require('webpack')
+var PROD = (process.env.NODE_ENV === 'production')
 
 module.exports = {
-  entry: './example/main.js',
+  entry: {
+    'vue-simple-color.js': './src/index.js',
+    'vue-simple-color.min.js': './src/index.js'
+  },
   output: {
-    path: path.resolve(__dirname, './example'),
-    publicPath: '/example/',
-    filename: 'example.js'
+    filename: '[name]',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/dist/',
+    library: ['vue-simple-color'],
+    libraryTarget: 'umd'
   },
   module: {
     rules: [
@@ -38,33 +44,10 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
-  performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
+  plugins: PROD ? [
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
+        include: /\.min\.js$/,
+        minimize: true
     })
-  ])
+  ] : []
 }
